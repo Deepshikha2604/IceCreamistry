@@ -1,0 +1,68 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block Content %}
+<div class="jumbotron jumbotron-fluid page-header" style="margin-bottom: 90px;">
+    <div class="container text-center py-5">
+        <h1 class="text-white display-3 mt-lg-5">SignUp</h1>
+        <div class="d-inline-flex align-items-center text-white">
+            <p class="m-0"><a class="text-white" href="/">Home</a></p>
+            <i class="fa fa-circle px-3"></i>
+            <p class="m-0">SignUp</p>
+        </div>
+    </div>
+</div>
+<!-- Contact Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="contact-form bg-light rounded p-5">
+                    <div id="success"></div>
+                    <form name="sentMessage" id="contactForm" novalidate="novalidate" method='POST'>
+                        <div class="form-row">
+                            <div class="col-sm-6 control-group">
+                                <input type="text" class="form-control p-4" id="username" name="username" placeholder="User Name" required="required" data-validation-required-message="Please enter your username" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="col-sm-6 control-group">
+                                <input type="text" class="form-control p-4" id="firstname" name="firstname" placeholder="First Name" required="required" data-validation-required-message="Please enter your First name" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="col-sm-6 control-group">
+                                <input type="text" class="form-control p-4" id="lastname" name="lastname" placeholder="Last Name" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="col-sm-6 control-group">
+                                <input type="email" class="form-control p-4" id="email" name="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <input type="password" class="form-control p-4" id="password" name="password" placeholder="Password" required="required" data-validation-required-message="Please enter a password" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="password" class="form-control p-4" id="cnfpassword" name="cnfpassword" placeholder="Confirm Password" required="required" data-validation-required-message="Please reenter your password" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        
+                        <div>
+                            <button class="btn btn-primary btn-block py-3 px-5" type="login" id="sendMessageButton">Signup</button>
+                            <p><a href="{% url 'login' %}">Already have an account? Click Here</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->
+<!-- Include Bootstrap JS and Popper.js (optional) -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+{% endblock Content %}

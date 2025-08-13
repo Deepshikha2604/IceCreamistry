@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block Content %}
+
+<h1>WELCOME USER!</h1>
+<div class="container mt-5">
+    <div class="jumbotron">
+        <div style="background-color: #3498db; padding: 20px; color: #fff; border-radius: 10px;">
+            <h2 class="display-4 text-sm mt-2" style="font-size: 2.5rem;font-weight: bold;">User Profile</h2>
+            <h5 style="color: #ecf0f1;">Welcome {{name}}</h5>
+            {% if users != None %}
+                <h5 style="color: #ecf0f1;">List of users</h5>
+                {% for user in users %}
+                    <a href="{% url 'userdetail' user.id %}" style="color: #ffffff;">{{user.username}}</a><br>
+                {% endfor %}
+            {% endif %}
+        </div><br>
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert {% if message.tags %} alert-{{message.tags}}" {% endif %} role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <form action="" method="post">
+            {% csrf_token %}
+
+{% endblock Content %}
